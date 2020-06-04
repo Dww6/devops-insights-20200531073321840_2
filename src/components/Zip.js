@@ -6,8 +6,11 @@ function Zip(props) {
 
     const validate = (event) => {
     	const spacesReplaced = event.target.value.split(' ').join('+');
+    	
         const cityNamePattern = /^[a-zA-Z\+]+$/;
         const valid = cityNamePattern.test(spacesReplaced);
+        console.log(valid);
+        console.log(spacesReplaced);
         if (!valid) {
             setValidationError('City Name must be at least 1 character and can consist only of Upper and Lower case letters and Spaces');
             props.clearResponse();
